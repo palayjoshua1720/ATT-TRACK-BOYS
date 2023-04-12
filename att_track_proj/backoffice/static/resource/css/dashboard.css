@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background: transparent linear-gradient(180deg, #e6dada 0%, #e6dada 100%) 0% 0% no-repeat padding-box;
+  }
+
+  .mg_acc div button{
+    float: right;
+  }
+
+  input:disabled {
+    color: gray;
+  }
+
+  .dept-container{
+    border: 1px solid black;
+    margin: auto; height: 500px;
+   }
+  
+  .avatar1{
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .sidebar {
+    margin: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 960px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  /* .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  } */
+
+  .avatar-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .avatar-input-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  /* .avatar-input-label:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  } */
+  
+  .avatar-input-text {
+    margin-left: 5px;
+    text-decoration: none;
+  }
+  
+  .avatar {
+    
+    vertical-align: middle;
+    width: 125px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content.show {
+    display: block;
+  }
+
+  .options{
+    float: right;
+  }
+
+  #picture {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #add-picture-button {
+    margin-left: 10px;
+  }
+
+  .sub span{
+    margin-left: 10%;
+  }
+  .gender label{
+    font-size: 18px;
+  }

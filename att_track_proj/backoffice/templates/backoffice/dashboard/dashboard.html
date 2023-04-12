@@ -1,0 +1,161 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>Login 08</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+<link href="{% static 'resource/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+<script src="{% static 'resource/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'resource/css/dashboard.css' %}">
+
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="sidebar pt-3">
+        <div class="pb-3 text-center">
+            <span><img src="./images/donki.jpg" alt="Avatar" class="avatar w-50 h-50"></span>
+            
+            <br>
+            <span class="h5 text-success">Jesse</span>
+        </div>
+        
+        <ul class="nav nav-tabs">
+          <li class="nav-item w-100">
+            <a class="nav-link" data-bs-toggle="pill" href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item dropdown w-100 ">
+            <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-user fe-16"></i>
+              <span class="ml-3 item-text">My Account</span>
+            </a>
+          <ul class="collapse list-unstyled w-100 text-center" id="profile">
+            <a class="nav-link text-start" href="./profile.html" ><span class="ml-1 ">&nbsp;&nbsp;Profile</span></a>
+            <a class="nav-link text-start" href="./changePass.html" ><span class="ml-1 ">&nbsp;&nbsp;Change Password</span></a>                
+          </ul>
+          </li>
+          <li class="nav-item w-100">
+            <a class="nav-link" data-bs-toggle="pill" href="#">Add Department</a>
+          </li>
+          <li class="nav-item w-100">
+            <a class="nav-link" data-bs-toggle="pill" href="#" >Add Position</a>
+          </li>
+          <li class="nav-item w-100">
+            <a class="nav-link" href="./signup.html">Logout</a>
+          </li>
+        </ul>
+      </div>    
+      
+    <div>
+        <center>xasdasd</center>
+    </div>
+
+      
+
+    <script src="{% static 'js/jQuery/jq.js' %}"></script>
+    <script src="{% static 'js/login/login.js' %}"></script>
+    <script src="{% static 'common/common.js' %}"></script>
+
+<script>
+//   function openCity(cityName) {
+// //   var i;
+// //   var x = document.getElementsByClassName("city");
+// //     for (i = 0; i < x.length; i++) {
+// //       x[i].style.display = "none";  
+// //     }
+// //     document.getElementById(cityName).style.display = "block";  
+// //   }
+
+  // function disableField(){
+  //   let get= document.getElementById("input")
+  //   get.disabled = true;
+  // }
+  function enableField(){
+    let get= document.getElementById("input")
+    get.disabled = false;
+  }
+
+  const inputs = document.querySelectorAll("input[disabled]");
+  const button = document.getElementById("editProfile");
+  const saveChanges = document.getElementById("saveChanges");
+  const addPic = document.getElementById("addPic");
+
+  // enable all input and show save changes button
+  button.addEventListener("click", function() {    
+    if (inputs[0].disabled) {
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = false;
+        saveChanges.hidden = false;
+        addPic.hidden = false;
+      }
+    } else {
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = true;
+        saveChanges.hidden = true;
+        addPic.hidden = true;
+      }
+    }
+  });
+
+  // disable input and hide save changes button
+  saveChanges.addEventListener("click", function() {    
+    if (inputs[0].disabled) {
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = false;
+        saveChanges.hidden = false;
+      }
+    } else {
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = true;
+        saveChanges.hidden = true;
+      }
+    }
+  });
+
+  // avatar add pic
+  function updateAvatar(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        document.getElementById('avatar-img').src = e.target.result;
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // multiple select in one input
+  function toggleDropdown() {
+			var dropdownContent = document.getElementById("dropdownContent");
+			dropdownContent.classList.toggle("show");
+		}
+
+		function selectOption(event) {
+			event.preventDefault();
+			var option = event.target.innerHTML;
+			var selectedOptionsInput = document.getElementById("selectedOptions");
+			var selectedOptions = selectedOptionsInput.value.split(", ");
+			if (selectedOptions.includes(option)) {
+				return;
+			}
+			selectedOptions.push(option);
+			selectedOptionsInput.value = selectedOptions.join(", ");
+		}
+
+
+</script>
+
+</body>
+</html>
+
